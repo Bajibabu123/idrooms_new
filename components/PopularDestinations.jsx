@@ -1,8 +1,8 @@
 import Image from "next/image";
 
-import mumbai from "@/public/mumbai.jpeg";
-import bangalore from "@/public/bangalore.jpeg";
-import goa from "@/public/goa.jpeg";
+import mumbai from "@/public/mumbai.png";
+import bangalore from "@/public/bangalore.png";
+import goa from "@/public/goa.png";
 
 const destinations = [
   {
@@ -32,23 +32,24 @@ export default function PopularDestinations() {
         Find stays in top cities loved by travelers
       </p>
 
-      <div className="grid grid-cols-3 gap-8">
+      {/* Center 3 cards + adjust width */}
+      <div className="grid grid-cols-3 gap-8 place-items-center">
         {destinations.map((d, index) => (
           <div
             key={index}
-            className="relative rounded-xl overflow-hidden shadow hover:shadow-xl transition duration-300"
+            className="relative rounded-xl overflow-hidden shadow hover:shadow-xl transition duration-300 w-150 h-80 m"
           >
-            {/* Image */}
+            {/* Make images taller */}
             <Image
               src={d.img}
               alt={d.name}
-              width={500}
+              width={300}
               height={300}
-              className="w-full h-56 object-cover"
+              className="w-full h-100 object-cover"
             />
 
-            {/* Dark Gradient Overlay */}
-            <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent"></div>
+            {/* Dark overlay */}
+            <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent "></div>
 
             {/* Text */}
             <div className="absolute bottom-4 left-4 text-white">
