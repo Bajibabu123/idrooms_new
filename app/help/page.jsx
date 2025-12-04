@@ -4,20 +4,13 @@ import Navbar from "@/components/Navbar";
 import Link from "next/link";
 import Image from "next/image";
 
-// ⭐ Updated Icons (as you requested)
-import { MdCalendarMonth } from "react-icons/md";
-import { MdAccountCircle } from "react-icons/md";
-import { IoGiftSharp } from "react-icons/io5";
-
-import { MdPayment } from "react-icons/md";
-import { CgProfile } from "react-icons/cg";
-import { GoGift } from "react-icons/go";
-import { IoCalendarOutline } from "react-icons/io5";
+// Icons
+import { MdCalendarMonth, MdAccountCircle, MdPayment, MdEmail } from "react-icons/md";
+import { IoGiftSharp, IoCalendarOutline } from "react-icons/io5";
 import { BsHeadset } from "react-icons/bs";
 import { CiSearch } from "react-icons/ci";
 import { RiArrowDropDownLine, RiArrowDropUpLine } from "react-icons/ri";
 import { HiChatBubbleLeftEllipsis } from "react-icons/hi2";
-import { MdEmail } from "react-icons/md";
 import { FaPhoneAlt } from "react-icons/fa";
 
 export default function HelpPage() {
@@ -25,19 +18,19 @@ export default function HelpPage() {
   const toggleFAQ = (i) => setOpenFAQ(openFAQ === i ? null : i);
 
   const faqs = [
-    "How do cancel or modify bookings?",
-    "How do refunds works?",
-    "How do redeem rewards?",
+    "How do I cancel or modify bookings?",
+    "How do refunds work?",
+    "How do I redeem rewards?",
     "How to change account details?",
     "What payment methods are accepted?",
-    "How can i add special request to my bookings?",
+    "How can I add special requests to my bookings?",
   ];
 
   return (
     <>
       <Navbar />
-      <div className="w-full pb-20">
 
+      <div className="w-full pb-20">
         {/* Top Banner */}
         <div className="bg-red-900 text-white py-20 mt-[-160px] rounded-lg mx-4 lg:mx-10 flex flex-col items-center justify-center">
           <div className="bg-white text-black w-16 h-16 flex items-center justify-center rounded-full shadow-lg">
@@ -49,14 +42,13 @@ export default function HelpPage() {
           </h1>
         </div>
 
-        {/* Quick Support Section */}
+        {/* Quick Support Options */}
         <div className="max-w-7xl mx-auto mt-14 px-4">
           <h2 className="text-center text-3xl font-semibold">Quick Support Options</h2>
-          <p className="text-center text-gray-500 text-xl mt-1">Select category for instant help</p>
+          <p className="text-center text-gray-500 text-xl mt-1">Select category to instant help</p>
 
           <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-
-            {/* ⭐ Booking Screen Icon Updated */}
+            {/* Booking */}
             <div className="p-7 rounded-xl bg-white shadow-md flex flex-col items-center cursor-pointer">
               <div className="p-4 rounded-full bg-red-100 flex items-center justify-center">
                 <MdCalendarMonth className="text-red-900 text-3xl" />
@@ -70,12 +62,8 @@ export default function HelpPage() {
               <div className="p-4 rounded-full bg-red-100 flex items-center justify-center">
                 <MdPayment className="text-red-900 text-2xl" />
               </div>
-              <h3 className="mt-4 font-semibold text-gray-800 text-lg text-center">
-                Payment & Billing
-              </h3>
-              <p className="text-gray-500 text-sm text-center mt-1">
-                Transaction queries & Invoices
-              </p>
+              <h3 className="mt-4 font-semibold text-gray-800 text-lg text-center">Payment & Billing</h3>
+              <p className="text-gray-500 text-sm text-center mt-1">Transaction queries & Invoices</p>
             </div>
 
             {/* Account */}
@@ -107,7 +95,7 @@ export default function HelpPage() {
             />
           </div>
 
-          {/* FAQ LIST */}
+          {/* FAQ List */}
           <div className="mt-10 space-y-4">
             {faqs.map((q, i) => (
               <div
@@ -121,7 +109,6 @@ export default function HelpPage() {
                     {openFAQ === i ? <RiArrowDropUpLine /> : <RiArrowDropDownLine />}
                   </span>
                 </div>
-
                 {openFAQ === i && (
                   <p className="mt-3 text-gray-600">
                     This is example text for your FAQ answer. Replace with your content.
@@ -132,84 +119,61 @@ export default function HelpPage() {
           </div>
         </div>
 
-        {/* ---------------- BELOW THIS IS SAME (NO CHANGE) ---------------- */}
-
         {/* Contact Support */}
         <div className="max-w-7xl mx-auto mt-20 px-4">
           <h2 className="text-center text-3xl font-semibold">Contact Support</h2>
-          <p className="text-center text-gray-500 mt-1">
-            Get in touch with our support team
-          </p>
+          <p className="text-center text-gray-500 mt-1">Get in touch with our support team</p>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-10 mt-10 text-center">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-10 mt-10 text-center">
+            {/* Chat */}
+            <div className="p-7 rounded-xl bg-white shadow-md flex flex-col items-center cursor-pointer">
+              <div className="p-4 rounded-full bg-red-100 flex items-center justify-center">
+                <HiChatBubbleLeftEllipsis className="text-red-900 text-2xl" />
+              </div>
+              <h3 className="mt-4 font-semibold text-gray-800 text-lg text-center">Chat Support</h3>
+              <p className="text-gray-500 text-sm text-center mt-1">Get instant help from our team</p>
+              <button className="mt-6 w-full py-3 bg-red-900 text-white rounded-lg">Start Chat</button>
+            </div>
 
-  {/* Chat Support */}
-  <div className="p-7 rounded-xl bg-white shadow-md flex flex-col items-center cursor-pointer">
-    <div className="p-4 rounded-full bg-red-100 flex items-center justify-center">
-      <HiChatBubbleLeftEllipsis className="text-red-900 text-2xl" />
-    </div>
-    <h3 className="mt-4 font-semibold text-gray-800 text-lg text-center">
-      Chat Support
-    </h3>
-    <p className="text-gray-500 text-sm text-center mt-1">
-      Get instant help from our team
-    </p>
-    <button className="mt-6 w-full py-3 bg-red-900 text-white rounded-lg">
-      Start Chat
-    </button>
-  </div>
+            {/* Email */}
+            <div className="p-7 rounded-xl bg-white shadow-md flex flex-col items-center cursor-pointer">
+              <div className="p-4 rounded-full bg-red-100 flex items-center justify-center">
+                <MdEmail className="text-red-900 text-2xl" />
+              </div>
+              <h3 className="mt-4 font-semibold text-gray-800 text-lg text-center">Email Support</h3>
+              <p className="text-gray-500 text-sm text-center mt-1">Get instant help from our team</p>
+              <p className="mt-3 text-red-700 font-semibold">Support@Hotelbook.Com</p>
+              <button className="mt-4 w-full py-3 border border-red-700 text-red-700 rounded-lg">
+                Send Email
+              </button>
+            </div>
 
-  {/* Email Support */}
-  <div className="p-7 rounded-xl bg-white shadow-md flex flex-col items-center cursor-pointer">
-    <div className="p-4 rounded-full bg-red-100 flex items-center justify-center">
-      <MdEmail className="text-red-900 text-2xl" />
-    </div>
-    <h3 className="mt-4 font-semibold text-gray-800 text-lg text-center">
-      Email Support
-    </h3>
-    <p className="text-gray-500 text-sm text-center mt-1">
-      Get instant help from our team
-    </p>
-    <p className="mt-3 text-red-700 font-semibold">Support@Hotelbook.Com</p>
-    <button className="mt-4 w-full py-3 border border-red-700 text-red-700 rounded-lg">
-      Send Email
-    </button>
-  </div>
-
-  {/* Phone Support */}
-  <div className="p-7 rounded-xl bg-white shadow-md flex flex-col items-center cursor-pointer">
-    <div className="p-4 rounded-full bg-red-100 flex items-center justify-center">
-      <FaPhoneAlt className="text-red-900 text-2xl" />
-    </div>
-    <h3 className="mt-4 font-semibold text-gray-800 text-lg text-center">
-      Phone Support
-    </h3>
-    <p className="text-gray-500 text-sm text-center mt-1">
-      Get instant help from our team
-    </p>
-    <p className="mt-3 text-blue-600 font-semibold">24/7 Available</p>
-    <button className="mt-4 w-full py-3 border border-red-700 text-red-700 rounded-lg">
-      +1(800) 123-4567
-    </button>
-  </div>
-
-</div>
+            {/* Phone */}
+            <div className="p-7 rounded-xl bg-white shadow-md flex flex-col items-center cursor-pointer">
+              <div className="p-4 rounded-full bg-red-100 flex items-center justify-center">
+                <FaPhoneAlt className="text-red-900 text-2xl" />
+              </div>
+              <h3 className="mt-4 font-semibold text-gray-800 text-lg text-center">Phone Support</h3>
+              <p className="text-gray-500 text-sm text-center mt-1">Get instant help from our team</p>
+              <p className="mt-3 text-blue-600 font-semibold">24/7 Available</p>
+              <button className="mt-4 w-full py-3 border border-red-700 text-red-700 rounded-lg">
+                +1(800) 123-4567
+              </button>
+            </div>
+          </div>
         </div>
 
         {/* Create Support Ticket */}
         <div className="max-w-4xl mx-auto mt-20 px-4">
-          <h2 className="text-center text-3xl font-semibold">
-            Create A Customer Support Ticket
-          </h2>
+          <h2 className="text-center text-3xl font-semibold">Create A Customer Support Ticket</h2>
           <p className="text-center text-gray-500 mt-1">
             Can’t find what you're looking for? Submit a detailed request
           </p>
         </div>
 
-        {/* Card Form */}
+        {/* Support Form */}
         <div className="max-w-4xl mx-auto mt-6 px-4">
           <form className="space-y-6 bg-white p-8 rounded-xl shadow-md">
-
             <div className="text-center mb-2">
               <h3 className="text-2xl font-semibold">Submit Your Request</h3>
             </div>
@@ -224,7 +188,6 @@ export default function HelpPage() {
                   required
                 />
               </div>
-
               <div>
                 <label className="text-sm text-gray-600">Email *</label>
                 <input
@@ -245,7 +208,6 @@ export default function HelpPage() {
                   placeholder="Booking ID (optional)"
                 />
               </div>
-
               <div>
                 <label className="text-sm text-gray-600">Issue Category *</label>
                 <select className="border border-gray-300 mt-1 p-3 rounded-lg w-full" required>
@@ -335,7 +297,8 @@ export default function HelpPage() {
               <h3 className="font-semibold mb-3 text-gray-900">Contact</h3>
               <p className="text-sm text-gray-600">support@idrooms.com</p>
               <p className="text-sm text-gray-600">+1 (800) 123-4567</p>
-              <p className="text-sm text-gray-600">Bangalore, Karnataka</p>
+              <p className="text-sm text-g
+              ray-600">Bangalore, Karnataka</p>
             </div>
           </div>
 
@@ -347,7 +310,7 @@ export default function HelpPage() {
               <p>Cookies</p>
             </div>
           </div>
-        </footer>
+        </footer>   
       </div>
     </>
   );

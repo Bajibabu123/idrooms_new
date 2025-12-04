@@ -86,12 +86,7 @@ export default function ProfilePage() {
 
         <div className="max-w-7xl mx-auto px-6 flex justify-center">
           <div className="w-full max-w-xl bg-white rounded-3xl shadow-lg border border-gray-200 p-10 relative min-h-[508px]">
-            <button
-              className="absolute top-5 right-5 text-gray-500 text-red-900 text-5xl font-light"
-              onClick={() => setShowForm(false)}
-            >
-              ×
-            </button>
+           
 
             <div className="flex items-center gap-6 pb-6 border-b border-gray-200">
               <div className="relative">

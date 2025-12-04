@@ -88,14 +88,15 @@ export default function Navbar() {
                 <Image
                   src="/logo.png"
                   alt="ID Rooms Logo"
-                  width={120}   // reduced from 150
+                  width={120}
                   height={120}
                   className="object-contain"
                 />
               </Link>
 
-              {/* NAV LINKS - only font-size reduced */}
-              <div className="flex items-center gap-10 text-gray-700 text-[17px] font-medium mr-[-525px]">
+              {/* NAV LINKS - reduced gap only */}
+              <div className="flex items-center gap-6 text-gray-700 text-[17px] font-medium mr-[-525px]">
+
                 <Link href="/explore">Explore</Link>
                 <Link href="/offers">Offers</Link>
                 <Link href="/help">Help</Link>
@@ -129,7 +130,7 @@ export default function Navbar() {
                     >
                       <Image
                         src="/profile.png"
-                        width={28}   // reduced
+                        width={28}
                         height={28}
                         alt="Profile"
                         className="rounded-full object-cover"
@@ -223,7 +224,6 @@ export default function Navbar() {
             </div>
           </nav>
 
-          {/* spacing reduced */}
           <div className="h-16"></div>
         </>
       )}
